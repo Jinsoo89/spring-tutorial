@@ -6,10 +6,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MainApp {
     public static void main(String[] args) {
         ApplicationContext context =
-                new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+                new AnnotationConfigApplicationContext(ConfigB.class);
 
-        HelloWorld helloWorld = context.getBean(HelloWorld.class);
-        helloWorld.setMessage("Hello World!");
-        helloWorld.getMessage();
+        A a = context.getBean(A.class);
+        B b = context.getBean(B.class);
+
+        System.out.println(a.getMessage());
+        System.out.println(b.getMessage());
     }
 }
